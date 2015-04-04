@@ -43,11 +43,7 @@ public class Principal {
         //Ejercicio 2 - Pruebas
         probarCartas();
         Mazo mazo = new Mazo();
-        for (int i = 0; i<4; i++){
-            for (int j = 0; j<12; j++){
-                System.out.println((mazo.sacarCarta(i, j)).datoCarta());
-            }
-        }
+        mazo.mostrarMazo();
     
         
         //Ejercicio 3 - Letra dada por la catedra

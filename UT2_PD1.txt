@@ -1,0 +1,29 @@
+UT2 _ PD1
+
+Ejercicio 1
+
+a) x
+b) y
+
+Salidas:
+a.y = 5 
+b.y = 6
+a.x = 2
+b.x = 2
+
+IdentifyMyParts.x = 2
+
+
+Ejercicio 4
+1)
+-El array "students" no es candidato a ser elegido por el garbage collector debido a que el primer objeto del array
+esta igualado a studentName
+-studentName tampoco es candidato a ser eliminado ya que el arreglo "students" hace referencia a esta variable
+
+Por lo tanto ninguna de las variables indicadas en el ejercicio son candidatas a ser eliminadas por el garbage collector
+
+
+2)
+Un programa no puede destruir objetos, pero si puede hacer que su valor sea null y quitar las referencias al mismo
+para que de ese modo el garbage collector lo elimine.
+

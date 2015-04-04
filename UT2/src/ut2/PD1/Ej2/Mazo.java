@@ -24,4 +24,12 @@ public class Mazo {
     public Carta sacarCarta(int palo, int numero) {
         return cartas[palo][numero];
     }
+    
+    public void mostrarMazo(){
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<12; j++){
+                System.out.println((this.sacarCarta(i, j)).datoCarta());
+            }
+        }
+    }
 }

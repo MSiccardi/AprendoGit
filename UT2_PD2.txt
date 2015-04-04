@@ -1,0 +1,305 @@
+Ejercicio 4
+Parte a
+Salida con argumentos indicados:
+
+a + b = 79.5
+a - b = -52.699997
+a * b = 885.7399
+a / b = 0.20272315
+a % b = 13.4
+
+Parte b
+En caso de desearse se puede sustituir 
+float a = (Float.valueOf(args[0])).floatValue(); 
+float b = (Float.valueOf(args[1])).floatValue();
+
+por:
+int a = (Integer.valueOf(args[0])).intValue(); 
+int b = (Integer.valueOf(args[1])).intValue();
+
+Para abarcar todos los enteros, ya que si fuesen flotantes, habrian numeros enteros positivos que no estarian en el rango
+del float.
+
+
+
+Ejercicio 5
+Parte 1
+
+3 digits before decimal point.
+2 digits after decimal point.
+
+Parte 2
+-Los datos se imprimen debido a que convierte el numero double en un string, al hacer esto, el punto, que marcaba el inicio
+de la parte decimal del numero, se vuelve un caracter, entonces al buscarlo con "indexOf" se puede dividir el numero
+(ahora string) en la parte previa al punto y posterior al mismo. Ahora se sabe que el indice del punto es la cantidad de
+elementos previos al punto, y luego, el largo de la cadena menos la posicion del punto menos uno (por tener en cuenta el 0)
+
+
+Ejercicio 6
+
+substring -
+	Substring es un metodo de los string que toma una cadena secundaria dentro del primer string y la devuelve.
+	Existen dos variantes de este metodo:
+		-substring(int indiceInicio) - Toma la cadena desde el indice indicado hasta el final del string inicial
+		-substring(int indiceInicio, int indiceFinal) - Toma la cadena desde el indice indicado hasta el indice indicado como final
+
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay".substring(11,20));
+		-Devuelve "Católica"
+
+split -
+	Split es un metodo de los string que devuelve una lista en la cual sus elementos son las subcadenas del primer string separados por el
+	elemento indicado como separador.
+	Variantes de split:
+		-split(String separador) - Genera una lista de todos los substrings en el primer string separados por el separador indicado
+		-split(String separador, int limite) - Genera una lista de la cantidad indicada como limite como cantidad de elementos
+							de substrings que estaban separados con el separador indicado en el primer string.
+
+	Ejemplo:
+		for (String str : "Universidad Católica del Uruguay".split(" ")){
+             		System.out.println(str);
+         	}
+	-Devuelve:
+		Universidad
+		Católica
+		del
+		Uruguay
+
+
+subSequence - 
+	subSequence es un metodo de string que devuelve una cadena secundaria del primer string. La diferencia con substring es que lo que devuelve
+	no es otro string sino que es un array de caracteres.
+	Sintaxis:
+		-subSequence(int indiceInicio, int indiceFinal) - Toma la cadena desde el indice indicado hasta el indice indicado como final
+	Ejemplo:
+		for (String str : "Universidad Católica del Uruguay".subSequence(11,20)){
+             		System.out.print(str);
+         	}
+		-Devuelve "Católica"
+		-NOTA: Hay que usar for porque es un array y no un string
+
+
+trim - 
+	trim es un metodo para los strings que devuelve el mismo string pero cortando los espacios previos a la cadena y posteriores
+	Sintaxis:
+		-str.rim() - Siendo str un string
+	Ejemplo:
+		System.out.println("   Universidad Católica del Uruguay  ".trim());
+		-Devuelve "Universidad Católica del Uruguay"
+
+
+toLowerCase - 
+	toLowerCase es un metodo de strings que devuelve el mismo string pero con todas las letras en minuscula		
+	Sintaxis:
+		-str.toLowerCase() - Siendo str un string
+	Ejemplo:
+		System.out.println("Universidad".toLowerCase());
+		-Devuelve "universidad"
+
+
+toUpperCase - 
+	toLowerCase es un metodo de strings que devuelve el mismo string pero con todas las letras en mayuscula	
+	Sintaxis:
+		-str.toUpperCase() - Siendo str un string
+	Ejemplo:
+		System.out.println("Universidad".toUpperCase());
+		-Devuelve "UNIVERSIDAD"
+
+
+
+indexOf -
+	indexOf es un metodo de strings que devuelve a que indice corresponde un caracter determinado.
+	indexOf tiene las siguientes variantes:
+		-indexOf(char ch)	- Devuelve el indice correspondiente al caracter ch en su primera ocurrencia
+		-indexOf(char ch, int desdeindice)	- Devuelve el indice correspondiente al caracter ch desde su primera ocurrencia a partir 
+							del indice determinado
+		-indexOf(String ch)	- Devuelve el indice correspondiente al sub string ch en su primera ocurrencia dentro del primer string
+		-indexOf(String ch, int desdeindice)	- Devuelve el indice correspondiente al sub string ch desde su primera ocurrencia a partir 
+							del indice determinado	
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay  ".indexOf("Ca"));
+		-Devuelve 12
+
+lastIndexOf - 
+	lastIndexOf es un metodo de strings que hace lo mismo que indexOf con la diferencia que en vez de devolver
+	el indice de la primera ocurrencia, devuelve el de la última ocurrencia.
+	Sintaxis:
+		Igual a la de indexOf (solo que la palabra es lastIndexOf)
+
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay".lastIndexOf("a"));
+		-Devuelve 30
+
+
+contains - 
+	contains es un metodo de strings que devuelve un booleano que representa si una cadena indicada se encuentra
+	contenida en el string inicial
+	Sintaxis:
+		str.contains(CharSequence secuencia) - Si secuencia se encuentra dentro de str se devolverá True, sino, False
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay".contains("Uru"));
+		-Devuelve true
+
+
+replace - 
+	replace es un metodo de string que devuelve la string inicial con un valor de caracter cambiado
+	Sintaxis:
+		str.replace('a','b') - Devuelve un string similar a str pero con la a cambiada por b.
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay".replace('a','J'));
+		-Devuelve "UniversidJd CJtólicJ del UruguJy"
+
+replaceAll-
+	replaceAll es un metodo de string que devuelve la string inicial pero cambiando toda una substring por otra string
+	(funciona igual que replace pero cambiando substrings)
+	Sintaxis:
+		str.replaceAll("ab","ba") - Devuelve un string similar a str pero con la substring ab cambiada por ba.
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay, verdad".replaceAll("dad","MOM"));
+		-Devuelve: "UniversiMOM Católica del Uruguay, verMOM"
+
+
+replaceFirst -
+	replaceFirst funciona de la misma mandera que replaceAll pero con la diferencia de que solo cambia la primer
+	substring que encuentra (y no todas).
+	Sintaxis:
+		str.replaceFirst("ab","ba") - Devuelve un string similar a str pero con la primer substring ab cambiada por ba. 
+
+	Ejemplo:
+		System.out.println("Universidad Católica del Uruguay, verdad".replaceFirst("dad","MOM"));
+		-Devuelve: "UniversiMOM Católica del Uruguay, verdad"
+
+
+
+Ejercicio 7
+
+STRING BUILDER
+-Los objetos StringBuilder son como strings pero pueden ser modificados
+
+StringBuilder -
+	Crea un StringBuilder con una capacidad de 16 elementos
+	Sintaxis:
+		StringBuilder()
+	Ejemplo:
+		StringBuilder sb = new StringBuilder();
+
+
+	StringBuilder(CharSequence cs) - Crea un StringBuilder con la secuencia cs y ademas otros 16 elementos vacios
+	al final de la cadena cs
+
+	StringBuilder(int initCapacity) - Crea un StringBuilder con la capacidad inicial indicada (todos los elementos vacios)
+
+ 	StringBuilder(String s) - Crea un StringBuilder con el valor inicializado con el string dado mas otros 16 elementos vacios
+	al final del string
+
+
+setLength -
+	Setea el largo de una secuencia de caracteres. Si el largo nuevo es menor al largo existente, se eliminan los elementos
+	de diferencia al final. Si el largo nuevo es mayor, agrega la diferencia al final de la secuencia existente.
+	Sintaxis:
+		void setLength(int newLength)
+
+
+ensureCapacity
+	Asegura que el largo del objeto StringBuilder sea al menos tan larga como la capacidad pasada por parametro
+	Sintaxis:
+		ensureCapacity(int minCapacity) - Se asegura que un objeto tipo StringBuilder tenga la capacidad "minCapacity"
+
+
+append
+	append es un metodo de los objetos tipo StringBuilder que permite convertir casi cualquier otro tipo en un string
+	y agregarlo al final del StringBuilder. (Nota: puede aceptar cualquier tipo de dato primitivo, o incluso un  String)
+	Ejemplo:
+		StringBuilder sb = new StringBuilder();
+        	sb.append("Hi there!");
+         	System.out.println(sb);
+	-Devuelve "Hi there!"
+
+insert
+	insert es un metodo de los objetos de tipo StringBuilder que permite realizar la misma tarea que append, con la diferencia
+	de que se le indica el indice donde realizar la insercion.
+	Sintaxis:
+		sb.insert(2,"hi!") - Agrega al objeto tipo StringBuilder sb el string "hi!" en la posicion 2.
+	Ejemplo:
+		StringBuilder sb = new StringBuilder();
+         	sb.append("Hi there!");
+         	sb.insert(2,"BYE");
+         	System.out.println(sb);
+	-Devuelve "HiBYE there!"
+
+
+delete / deleteCharAt
+	delete es un mètodo de los objetos tipo StringBuilder que permite borrar datos del objeto.
+	Tiene 2 variantes:
+		sb.delete(int inicio, int fin) - En este caso se elimina todo lo que se encuentre entre los indices de inicio y fin
+		sb.deleteCharAt(int indice) - Se elimina el caracter que se encuentra en la posicion del indice determinado
+
+	Ejemplo:
+		StringBuilder sb = new StringBuilder();
+         	sb.append("Hi there!");
+        	sb.delete(2,4);
+        	System.out.println(sb);
+	-Devuelve "Hihere"
+
+
+reverse
+	reverse es un método de los objetos tipo StringBuilder que devuelve la cadena al reves.
+	Ejemplo:
+		StringBuilder sb = new StringBuilder();
+         	sb.append("Hi there!");
+         	System.out.println(sb.reverse());
+	-Devuelve: "!ereht iH"
+
+
+
+
+Ejercicio 8
+La capacidad inicial es de 31 (25 de la cadena + 16 vacios)
+
+
+Ejercicio 9
+a) 32
+b) e
+c) hannah.charAt(15);
+
+
+Ejercicio 10
+a) 3
+b) car
+
+
+Ejercicio 11
+1: eola
+2: e2la
+3: e 2la
+4: e 2laste
+5: e 2am laste
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
