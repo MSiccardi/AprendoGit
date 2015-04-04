@@ -7,6 +7,9 @@ package ut2.PD1;
 
 import ut2.PD1.Ej2.Carta;
 import ut2.PD1.Ej2.Mazo;
+import ut2.PD1.Ej3.Rectangle;
+import ut2.PD1.Ej4.NumberHolder;
+
 //java -ea UT2.class;
 /**
  *
@@ -45,6 +48,32 @@ public class Principal {
                 System.out.println((mazo.sacarCarta(i, j)).datoCarta());
             }
         }
+    
+        
+        //Ejercicio 3 - Letra dada por la catedra
+        /* El error es que myRect no es inicializada con new por lo tanto
+            myRect queda apuntando a null por lo que dara una excepcion NullPointerException
+        
+        Rectangle myRect;
+        myRect.width = 40;
+        myRect.height = 50;
+        System.out.println("myRect's area is " + myRect.area());
+        */
+        
+        //Codigo corregido
+        Rectangle myRect = new Rectangle();
+        myRect.width = 40;
+        myRect.height = 50;
+        System.out.println("myRect's area is " + myRect.area());
+    
+        
+        //Ejercicio 4 - Parte 3 , prueba NumberHolder
+        NumberHolder nh = new NumberHolder();
+        nh.anInt = 1;
+        nh.aFloat = 2.6f;
+        System.out.println(nh.anInt);
+        System.out.println(nh.aFloat);
+    
     }
     
 }
