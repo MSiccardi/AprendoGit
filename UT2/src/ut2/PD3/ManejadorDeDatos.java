@@ -44,7 +44,7 @@ public class ManejadorDeDatos {
     
     public static void escribirArchivo (String aEscribir, String nomArchivo) throws
             IOException {
-        FileWriter lector = new FileWriter(nomArchivo,true);
+        FileWriter lector = new FileWriter(nomArchivo);
         BufferedWriter bw = new BufferedWriter(lector);
         PrintWriter salida = new PrintWriter(bw);
         salida.println(aEscribir);
