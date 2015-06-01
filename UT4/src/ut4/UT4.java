@@ -42,6 +42,11 @@ public class UT4 {
      */
     public static void main(String[] args){
         TArbolBB arbol = cargar("src/Archivos/clavesPrueba.txt","src/Archivos/miArchivo.txt");
+        String [] myString = new String [3];
+        myString [0] = arbol.preOrden();
+        myString [1] = arbol.postOrden();
+        myString [2] = arbol.inOrden();
+        ManejadorArchivosGenerico.escribirArchivo("src/Archivos/recorridos.txt", myString);
         
         System.out.println(arbol.preOrden());
         System.out.println(arbol.inOrden());
